@@ -1,0 +1,116 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e0f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#chat {
+  width: 90%;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #b2ebf2;
+  position: relative;
+}
+
+#messages {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #b2ebf2;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #f0f4c3;
+  scroll-behavior: smooth;
+}
+
+#userInput, #chatInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+#userInput input, #chatInput input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #b2ebf2;
+  background-color: #ffffff;
+  flex: 1 1 calc(33% - 20px);
+  margin-right: 10px;
+}
+
+#userInput button, #chatInput button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00796b;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex: 1 1 100px;
+  margin: 5px 0;
+}
+
+#userInput button:hover, #chatInput button:hover {
+  background-color: #004d40;
+}
+
+#chatInput {
+  display: none;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e0f2f1;
+  border: 1px solid #b2ebf2;
+}
+
+.message strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.notification {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.notification.show {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  #userInput input, #chatInput input {
+      width: calc(100% - 90px);
+      margin-right: 0;
+  }
+
+  #userInput, #chatInput {
+      flex-direction: column;
+  }
+
+  #userInput button, #chatInput button {
+      width: 100%;
+      margin-top: 10px;
+  }
+}
